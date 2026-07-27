@@ -6,7 +6,7 @@
     <style>
         /* Fondo + overlay unique to Inicio */
         body {
-            background: url("{{ asset('img/cam.jpg') }}") center/cover no-repeat fixed;
+            background: url("{{ asset('img/logo/cam.jpg') }}") center/cover no-repeat fixed;
         }
 
         body::before {
@@ -77,7 +77,7 @@
 
 @section('content')
     <section class="hero">
-        <img src="{{ asset('img/logoema2.png') }}" alt="Emanuel Films" class="hero-logo">
+        <img src="{{ asset('img/logo/logoema2.png') }}" alt="Emanuel Films" class="hero-logo">
         <p>Capturamos historias con pasión y creatividad. Producciones audiovisuales profesionales que trascienden.</p>
         <a href="{{ url('/servicios') }}" class="cta">Ver Portafolio</a>
     </section>

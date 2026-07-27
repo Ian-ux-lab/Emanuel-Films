@@ -241,7 +241,7 @@
     <header>
         <div class="logo-container">
             <a href="{{ url('/') }}">
-                <img src="{{ asset('img/logoema.webp') }}" alt="Emanuel Films Logo" class="logo">
+                <img src="{{ asset('img/logo/logoema.webp') }}" alt="Emanuel Films Logo" class="logo">
             </a>
         </div>
         

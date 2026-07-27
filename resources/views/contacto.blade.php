@@ -174,7 +174,7 @@
 
     <div class="contact-card">
         <div class="owner-avatar">
-            <img src="{{ asset('img/emanuel.jpg') }}" alt="Fotógrafo - Emanuel Films" class="expandable">
+            <img src="{{ asset('img/logo/emanuel.jpg') }}" alt="Fotógrafo - Emanuel Films" class="expandable">
         </div>
 
         <div class="owner-info">
@@ -187,21 +187,21 @@
             <div class="social-links">
                 <a class="social-link-wrapper" href="https://www.facebook.com/profile.php?id=100048409281026" target="_blank">
                     <div class="social-btn-circle">
-                        <img src="{{ asset('img/fa.webp') }}" alt="Facebook">
+                        <img src="{{ asset('img/logo/fa.webp') }}" alt="Facebook">
                     </div>
                     <span class="social-name">Facebook</span>
                 </a>
 
                 <a class="social-link-wrapper" href="https://www.instagram.com/emanuelfilms.hn?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
                     <div class="social-btn-circle" style="background:#E4405F;">
-                        <img src="{{ asset('img/ig.webp') }}" alt="Instagram">
+                        <img src="{{ asset('img/logo/ig.webp') }}" alt="Instagram">
                     </div>
                     <span class="social-name">Instagram</span>
                 </a>
 
                 <a class="social-link-wrapper" href="https://wa.me/50489579756" target="_blank">
                     <div class="social-btn-circle" style="background:#25D366;">
-                        <img src="{{ asset('img/w.webp') }}" alt="WhatsApp">
+                        <img src="{{ asset('img/logo/w.webp') }}" alt="WhatsApp">
                     </div>
                     <span class="social-name">WhatsApp</span>
                 </a>

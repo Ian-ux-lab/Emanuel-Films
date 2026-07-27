@@ -201,12 +201,12 @@
        <!-- <article class="project-card" 
             data-title="Emanuel cafe"
             data-desc="Cortometraje documental en producción con estética cinematográfica enfocado en la cultura del café."
-            data-image="{{ asset('img/cafe.jpg') }}" 
+            data-image="{{ asset('img/logo/cafe.jpg') }}" 
             data-status="Futuro" 
             data-fb="https://www.facebook.com/"
             data-ig="https://www.instagram.com/" 
             data-wa="https://wa.me/1234567890">
-            <img class="project-thumb" src="{{ asset('img/cafe.jpg') }}">
+            <img class="project-thumb" src="{{ asset('img/logo/cafe.jpg') }}">
             <div class="project-body">
                 <div>
                     <div class="project-title">Emanuel cafe</div>
@@ -222,12 +222,12 @@
         <article class="project-card" 
             data-title="Exploshow"
             data-desc="🎤💃🕺📸 EXPLOSHOW es una empresa líder dedicada a la animación y el entretenimiento de alto nivel. Especializados en transformar eventos sociales, educativos, culturales y corporativos en experiencias memorables llenas de energía y profesionalismo." 
-            data-image="{{ asset('img/ex.jpg') }}"
+            data-image="{{ asset('img/logo/ex.jpg') }}"
             data-status="Actual" 
             data-fb="https://www.facebook.com/profile.php?id=61585698702809" 
             data-ig="https://www.instagram.com/exploshowhn?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
             data-wa="https://wa.me/50496719995">
-            <img class="project-thumb" src="{{ asset('img/ex.jpg') }}">
+            <img class="project-thumb" src="{{ asset('img/logo/ex.jpg') }}">
             <div class="project-body">
                 <div>
                     <div class="project-title">Exploshow</div>
@@ -252,15 +252,15 @@
                 <div class="modal-desc" id="modalDesc"></div>
                 <div class="social-links">
                     <a id="modalFb" class="social-link-wrapper" target="_blank">
-                        <div class="social-btn-circle"><img src="{{ asset('img/fa.webp') }}"></div>
+                        <div class="social-btn-circle"><img src="{{ asset('img/logo/fa.webp') }}"></div>
                         <span>Facebook</span>
                     </a>
                     <a id="modalIg" class="social-link-wrapper" target="_blank">
-                        <div class="social-btn-circle" style="background:#E4405F;"><img src="{{ asset('img/ig.webp') }}"></div>
+                        <div class="social-btn-circle" style="background:#E4405F;"><img src="{{ asset('img/logo/ig.webp') }}"></div>
                         <span>Instagram</span>
                     </a>
                     <a id="modalWa" class="social-link-wrapper" target="_blank">
-                        <div class="social-btn-circle" style="background:#25D366;"><img src="{{ asset('img/w.webp') }}"></div>
+                        <div class="social-btn-circle" style="background:#25D366;"><img src="{{ asset('img/logo/w.webp') }}"></div>
                         <span>WhatsApp</span>
                     </a>
                 </div>

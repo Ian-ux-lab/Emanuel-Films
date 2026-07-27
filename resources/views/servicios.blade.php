@@ -285,27 +285,32 @@
             'bodas' => [
                 'title' => 'Bodas',
                 'desc' => 'Capturando momentos inolvidables de tu gran día.',
-                'cover' => 'img/0.jpg'
+                'cover' => 'img/bodas/DSC02479.webp'
             ],
             'sesiones' => [
                 'title' => 'Sesiones',
                 'desc' => 'Fotografía profesional en estudio o exteriores.',
-                'cover' => 'img/11.jpg'
+                'cover' => 'img/sesiones/DSC01202.webp'
             ],
             'eventos' => [
                 'title' => 'Eventos',
                 'desc' => 'Cobertura completa de eventos sociales y corporativos.',
-                'cover' => 'img/5.jpg'
+                'cover' => 'img/eventos/DSC01963.webp'
             ],
             'marketing' => [
                 'title' => 'Marketing',
                 'desc' => 'Contenido visual estratégico para tu marca o negocio.',
-                'cover' => 'img/1.jpg'
+                'cover' => 'img/MARKETING/31.webp'
+            ],
+            'quince' => [
+                'title' => '15 Años',
+                'desc' => 'Celebra tu momento más especial con estilo.',
+                'cover' => 'img/15s/DSC01514.webp'
             ],
             'videos' => [
                 'title' => 'Videos',
                 'desc' => 'Producciones audiovisuales de alta calidad.',
-                'cover' => 'img/cam.jpg'
+                'cover' => 'img/logo/cam.jpg'
             ]
         ];
     @endphp
@@ -365,7 +370,8 @@
             bodas: 0,
             sesiones: 0,
             eventos: 0,
-            marketing: 0
+            marketing: 0,
+            quince: 0
         };
 
         /**
@@ -406,10 +412,32 @@
 
         // Mapeo de contenido por servicio
         const serviceMedia = {
-            bodas: ['0.jpg', '1.jpg', '2.jpg', '3.jpg', '4.JPG', '5.jpg', '6.JPG'],
-            sesiones: ['7.JPG', '8.JPG', '9.jpg', '10.jpg', '11.jpg', '0.jpg'],
-            eventos: ['1.jpg', '3.jpg', '5.jpg', '7.JPG', '9.jpg'],
-            marketing: ['2.jpg', '4.JPG', '6.JPG', '8.JPG', '10.jpg'],
+            bodas: [
+                'bodas/DSC02479.webp', 'bodas/DSC02502.webp', 'bodas/DSC02599.webp',
+                'bodas/DSC02668.webp', 'bodas/DSC02764.webp', 'bodas/DSC08481.webp',
+                'bodas/DSC08850.webp', 'bodas/DSC08895.webp', 'bodas/DSC09484.webp',
+                'bodas/DSC09489.webp'
+            ],
+            sesiones: [
+                'sesiones/DSC01202.webp', 'sesiones/DSC01306.webp', 'sesiones/DSC09613.webp',
+                'sesiones/DSC09630.webp', 'sesiones/DSC09720-Mejorado-NR.webp', 'sesiones/DSC09721.webp',
+                'sesiones/DSC09749.webp', 'sesiones/DSC09771.webp'
+            ],
+            eventos: [
+                'eventos/DSC01963.webp', 'eventos/DSC02151.webp', 'eventos/DSC02152.webp',
+                'eventos/DSC03574.webp', 'eventos/DSC03691.webp', 'eventos/DSC08694.webp',
+                'eventos/DSC08698.webp', 'eventos/DSC09371.webp', 'eventos/DSC09475.webp'
+            ],
+            marketing: [
+                'marketing/31.webp', 'marketing/33.webp', 'marketing/DSC02126.webp',
+                'marketing/DSC02134.webp', 'marketing/DSC06156.webp', 'marketing/DSC06163.webp',
+                'marketing/DSC06166.webp', 'marketing/DSC09473.webp', 'marketing/DSC09498.webp'
+            ],
+            quince: [
+                '15s/DSC01514.webp', '15s/DSC01567.webp', '15s/DSC03099.webp',
+                '15s/DSC03128.webp', '15s/DSC09505.webp', '15s/DSC09512.webp',
+                '15s/DSC09763.webp'
+            ],
             videos: [
                 'https://www.youtube.com/embed/sCZR7gaWikE',
                 'https://www.youtube.com/embed/sU1wHQS5wKY',
