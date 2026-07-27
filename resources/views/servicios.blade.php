@@ -56,7 +56,12 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s;
+            transition: transform 0.6s, opacity 0.5s ease;
+            opacity: 0;
+        }
+
+        .service-card img.loaded {
+            opacity: 1;
         }
 
         .service-card:hover img {
@@ -162,8 +167,13 @@
             object-fit: cover;
             border-radius: 15px;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, opacity 0.4s ease;
             box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            opacity: 0;
+        }
+
+        .refs-grid img.loaded {
+            opacity: 1;
         }
 
         .refs-grid img:hover {
@@ -318,7 +328,7 @@
     <div class="services-grid">
         @foreach($services as $id => $data)
             <article class="service-card" onclick="openRefsModal('{{ $id }}', '{{ $data['title'] }}')">
-                <img src="{{ asset($data['cover']) }}" alt="{{ $data['title'] }}">
+                <img src="{{ asset($data['cover']) }}" alt="{{ $data['title'] }}" loading="lazy" decoding="async">
                 <div class="service-overlay">
                     <h2>{{ $data['title'] }}</h2>
                     <p>{{ $data['desc'] }}</p>
@@ -484,7 +494,10 @@
                 media.forEach(imgName => {
                     const img = document.createElement('img');
                     img.src = `{{ asset('img/') }}/${imgName}`;
+                    img.loading = 'lazy';
+                    img.decoding = 'async';
                     img.classList.add('expandable');
+                    img.onload = () => img.classList.add('loaded');
                     refsGrid.appendChild(img);
                 });
                 // Restaurar grid original para imágenes
@@ -504,6 +517,15 @@
         // Cerrar modal al hacer clic fuera del contenido
         refsModal.addEventListener('click', (e) => {
             if (e.target === refsModal) closeRefsModal();
+        });
+
+        // Lazy fade-in para imágenes de las tarjetas
+        document.querySelectorAll('.service-card img').forEach(img => {
+            if (img.complete) {
+                img.classList.add('loaded');
+            } else {
+                img.addEventListener('load', () => img.classList.add('loaded'));
+            }
         });
 
         // Adjust carousel on resize
