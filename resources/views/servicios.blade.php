@@ -439,9 +439,9 @@
                 'eventos/DSC08698.webp', 'eventos/DSC09371.webp', 'eventos/DSC09475.webp'
             ],
             marketing: [
-                'marketing/31.webp', 'marketing/33.webp', 'marketing/DSC02126.webp',
-                'marketing/DSC02134.webp', 'marketing/DSC06156.webp', 'marketing/DSC06163.webp',
-                'marketing/DSC06166.webp', 'marketing/DSC09473.webp', 'marketing/DSC09498.webp'
+                'MARKETING/31.webp', 'MARKETING/33.webp', 'MARKETING/DSC02126.webp',
+                'MARKETING/DSC02134.webp', 'MARKETING/DSC06156.webp', 'MARKETING/DSC06163.webp',
+                'MARKETING/DSC06166.webp', 'MARKETING/DSC09473.webp', 'MARKETING/DSC09498.webp'
             ],
             quince: [
                 '15s/DSC01514.webp', '15s/DSC01567.webp', '15s/DSC03099.webp',

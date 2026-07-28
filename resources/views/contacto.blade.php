@@ -47,7 +47,6 @@
             overflow: hidden;
             flex-shrink: 0;
             box-shadow: 0 20px 50px rgba(0, 0, 0, .1);
-            cursor: pointer;
         }
 
         .owner-avatar img {
@@ -174,7 +173,7 @@
 
     <div class="contact-card">
         <div class="owner-avatar">
-            <img src="{{ asset('img/logo/emanuel.jpg') }}" alt="Fotógrafo - Emanuel Films" class="expandable">
+            <img src="{{ asset('img/logo/emanuel.jpg') }}" alt="Fotógrafo - Emanuel Films">
         </div>
 
         <div class="owner-info">
