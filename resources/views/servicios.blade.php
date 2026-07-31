@@ -143,15 +143,20 @@
         }
 
         .refs-close {
-            background: none;
+            background: rgba(0,0,0,0.5);
             border: none;
             color: #fff;
-            font-size: 3rem;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
         }
 
-        .refs-close:hover { transform: scale(1.1); }
+        .refs-close:hover { background: rgba(0,0,0,0.7); }
 
         .refs-grid {
             display: grid;
@@ -362,7 +367,7 @@
     <div id="refsModal" class="refs-modal">
         <div class="refs-header">
             <div class="refs-title" id="refsModalTitle">Título</div>
-            <button class="refs-close" onclick="closeRefsModal()">&times;</button>
+            <button class="refs-close" onclick="closeRefsModal()">Cerrar</button>
         </div>
         <div class="refs-grid" id="refsModalGrid">
             <!-- Las imágenes o videos se cargarán dinámicamente aquí -->

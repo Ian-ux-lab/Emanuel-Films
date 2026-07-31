@@ -125,13 +125,17 @@
             background: rgba(0,0,0,0.5);
             color: #fff;
             border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 1.5rem;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
             z-index: 10;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
+
+        .modal-close:hover { background: rgba(0,0,0,0.7); }
 
         .modal-left { width: 50%; }
         .modal-left img { width: 100%; height: 100%; object-fit: cover; }
@@ -242,7 +246,7 @@
 
     <div id="projectModal" class="modal-backdrop">
         <div class="modal-content">
-            <button id="modalClose" class="modal-close">&times;</button>
+            <button id="modalClose" class="modal-close">Cerrar</button>
             <div class="modal-left">
                 <img id="modalImage" src="" alt="">
             </div>

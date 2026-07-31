@@ -143,19 +143,8 @@
             max-height: 90%;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
             border-radius: 4px;
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            cursor: zoom-in;
             user-select: none;
             -webkit-user-drag: none;
-        }
-
-        #lightbox img.zoomed {
-            transform: scale(2.5);
-            cursor: grab;
-        }
-
-        #lightbox img.zoomed:active {
-            cursor: grabbing;
         }
 
         #lightbox.active {
@@ -167,9 +156,19 @@
             top: 20px;
             right: 30px;
             color: white;
-            font-size: 40px;
-            font-weight: bold;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .close-lightbox:hover {
+            background: rgba(255, 255, 255, 0.3);
         }
 
         /* Mobile Adjustments */
@@ -269,7 +268,7 @@
 
     <!-- Lightbox Modal -->
     <div id="lightbox">
-        <span class="close-lightbox">&times;</span>
+        <span class="close-lightbox">Cerrar</span>
         <img src="" alt="Expanded Image">
     </div>
 
@@ -296,95 +295,22 @@
         const lightboxImg = lightbox.querySelector('img');
         const closeLightbox = document.querySelector('.close-lightbox');
 
-        let isDragging = false;
-        let startX, startY;
-        let translateX = 0, translateY = 0;
-        let lastTranslateX = 0, lastTranslateY = 0;
-        let hasMoved = false;
-
-        function updateImageTransform(smoothing = true) {
-            lightboxImg.style.transition = smoothing ? 'transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)' : 'none';
-            const scale = lightboxImg.classList.contains('zoomed') ? 2.5 : 1;
-            lightboxImg.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
-        }
-
         function openLightbox(src) {
             lightboxImg.src = src;
-            lightboxImg.classList.remove('zoomed'); 
-            translateX = 0;
-            translateY = 0;
-            lastTranslateX = 0;
-            lastTranslateY = 0;
-            updateImageTransform();
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden'; 
         }
 
-        // Drag/Pan Logic
-        const startPan = (e) => {
-            if (!lightboxImg.classList.contains('zoomed')) return;
-            isDragging = true;
-            hasMoved = false;
-            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-            startX = clientX - lastTranslateX;
-            startY = clientY - lastTranslateY;
-            e.preventDefault();
-        };
+        function closeLightboxModal() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
 
-        const movePan = (e) => {
-            if (!isDragging) return;
-            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-            
-            const newX = clientX - startX;
-            const newY = clientY - startY;
-            
-            // Minimal threshold to distinguish click from drag
-            if (Math.abs(newX - lastTranslateX) > 5 || Math.abs(newY - lastTranslateY) > 5) {
-                hasMoved = true;
-            }
-
-            translateX = newX;
-            translateY = newY;
-            updateImageTransform(false);
-        };
-
-        const endPan = () => {
-            isDragging = false;
-            lastTranslateX = translateX;
-            lastTranslateY = translateY;
-        };
-
-        lightboxImg.addEventListener('mousedown', startPan);
-        window.addEventListener('mousemove', movePan);
-        window.addEventListener('mouseup', endPan);
-
-        lightboxImg.addEventListener('touchstart', startPan, { passive: false });
-        window.addEventListener('touchmove', movePan, { passive: false });
-        window.addEventListener('touchend', endPan);
-
-        // Toggle Zoom on click (only if not dragged)
-        lightboxImg.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (hasMoved) return; // Don't toggle if we were panning
-
-            if (lightboxImg.classList.contains('zoomed')) {
-                lightboxImg.classList.remove('zoomed');
-                translateX = 0;
-                translateY = 0;
-                lastTranslateX = 0;
-                lastTranslateY = 0;
-            } else {
-                lightboxImg.classList.add('zoomed');
-            }
-            updateImageTransform();
-        });
+        closeLightbox.addEventListener('click', closeLightboxModal);
 
         lightbox.addEventListener('click', (e) => {
             if (e.target !== lightboxImg) {
-                lightbox.classList.remove('active');
-                document.body.style.overflow = ''; // Restore scrolling
+                closeLightboxModal();
             }
         });
 
